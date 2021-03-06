@@ -40,7 +40,7 @@ def sign_up(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            messages.info(request, "Welcome to KGP")
+            messages.info(request, "Welcome to RentKeja, Your Best booking website")
             return redirect('index')
         else:
             messages.error(request, "Invalid Form Details")

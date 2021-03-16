@@ -19,6 +19,10 @@ class Rooms(models.Model):
         ('Double-AC', 'Double-AC'),
         ('Single-NON-AC', 'Single NON-AC'),
         ('Double-NON-AC', 'Double-NON-AC'),
+        ('BedSitter', 'BedSitter'),
+        ('One-BedRoom', 'One-BedRoom'),
+        ('Two-BedRoom', 'Two-BedRoom'),
+        ('Three-BedRoom', 'Three-BedRoom')
     ]
     room_type = models.CharField( max_length=20, choices=ROOM_TYPES, null=False)
     guesthouse = models.ForeignKey(GuestHouse, on_delete=models.CASCADE, null=False, blank=False)
@@ -46,10 +50,14 @@ class Reservation(models.Model):
     waiting = models.BooleanField(default=False)
     
     ROOM_TYPES = [
-        ('Single-AC', 'Single-AC'),
+       ('Single-AC', 'Single-AC'),
         ('Double-AC', 'Double-AC'),
         ('Single-NON-AC', 'Single NON-AC'),
         ('Double-NON-AC', 'Double-NON-AC'),
+        ('BedSitter', 'BedSitter'),
+        ('One-BedRoom', 'One-BedRoom'),
+        ('Two-BedRoom', 'Two-BedRoom'),
+        ('Three-BedRoom', 'Three-BedRoom')
     ]
     room_type = models.CharField(max_length=20, choices=ROOM_TYPES, null=True, blank=True)
     booktime = models.DateField(null=False)
@@ -71,6 +79,10 @@ class PreReservation(models.Model):
         ('Double-AC', 'Double-AC'),
         ('Single-NON-AC', 'Single NON-AC'),
         ('Double-NON-AC', 'Double-NON-AC'),
+        ('BedSitter', 'BedSitter'),
+        ('One-BedRoom', 'One-BedRoom'),
+        ('Two-BedRoom', 'Two-BedRoom'),
+        ('Three-BedRoom', 'Three-BedRoom')
     ]
     room_type = models.CharField(max_length=20, choices=ROOM_TYPES, null=True, blank=True)          
 
@@ -151,3 +163,12 @@ class WaitingOn(models.Model):
 #	staff = models.ForeignKey(User, on_delete=models.CASCADE)
 #    message = models.TextField( default=None)
 #    time = models.DateTimeField(default=timezone.now, null=True)
+
+class LandLord(models.Model):
+    
+
+
+class vacate(models.Model):
+
+
+    
